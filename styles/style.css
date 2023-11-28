@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+  --main-font: 'Raleway';
+  --accent-font: 'STIX Two Text';
+}
+
 *,
 *::before,
 *::after {
@@ -5,8 +13,11 @@
 }
 
 .page {
-  min-inline-size: 360px;
   margin: 0;
+  color: var(--text-color, #312A4E) ;
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, #F3EFEC);
+  min-inline-size: 360px;
 }
 
 p,
@@ -20,3 +31,92 @@ li,
 figure {
   margin: 0;
 }
+
+/* Шаг 2. Базовая настройка CSS-переменных и повторяющихся элементов */
+
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+/* Шаг 3. Стили заголовков */
+
+.header__title {
+  margin-block-end: 40px;
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+}
+
+.content__title {
+  margin: 7% 0 2.5%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.header {
+  padding-block-start: 10%;
+}
+
+/* Шаг 4. Абзацы */
+
+.content__text-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.content__paragraph:not(:last-child) {
+  margin-block-end: 1.5em;
+}
+
+.content-link {
+  color: currentColor; 
+}
+
+/* Шаг 5. Цитата и список */
+
+.content__blockquote {
+  align-self: center;
+  margin-block-end: 1.5em;
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 2;
+  inline-size: 75%;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 0px;
+  list-style: none;
+}
+
+.content__list-item {
+  margin-inline-start: 40px;
+}
+
+.content__list-item::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/marker-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(90deg);
+}
+
+/* Шаг 6. Буквица */
