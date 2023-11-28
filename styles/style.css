@@ -120,3 +120,44 @@ figure {
 }
 
 /* Шаг 6. Буквица */
+
+.content__text-block_type_first-lettered .content__paragraph:first-letter {
+  display: inline-block;
+  margin-inline-end: 1px;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color);
+}
+
+/* Шаг 7. Изображение */
+
+.content__figure {
+  position: relative;
+  left: -5vi;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% + 5vi * 2);
+  margin-block: 7%;
+}
+
+.content__picture {
+  width: inherit;
+}
+
+.figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #312A4E;
+  padding: 20px 0px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  inline-size: 100%;
+}
+
+/* Шаг 8. Карточка */
