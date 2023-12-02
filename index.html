@@ -53,12 +53,19 @@
       </div>
 
       <figure class="content__figure">
-        <picture class="content__picture">
-          <source srcset="./images/cards-1x.avif" type="image/avif" class="content__picture">
-          <source srcset="./images/cards-1x.webp" type="image/webp" class="content__picture">
-          <img src="./images/cards-1x.png" alt="" loading="lazy" class="content__picture">
+        <picture>
+          <source 
+            srcset="./images/cards-1x.avif 1x, ./images/cards-2x.avif 2x" type="image/avif" />
+
+          <source 
+            srcset="./images/cards-1x.webp 1x, ./images/cards-2x.webp 2x" type="image/webp" />
+
+          <img 
+            loading="lazy"
+            class="content__picture"
+            srcset="./images/cards-1x.png 1x, ./images/cards-2x.png 2x" alt="Колода Oblique Strategies на деревянном столе рядом с блокнотом, ручкой, смартфоном и цветком в горшке" />
         </picture>
-        
+
         <figcaption class="figcaption">
           Колода Oblique Strategies
         </figcaption>

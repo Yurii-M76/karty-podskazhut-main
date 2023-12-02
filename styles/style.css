@@ -134,17 +134,17 @@ figure {
 
 .content__figure {
   position: relative;
-  left: -5vi;
+  inset-inline-end: 5vi;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: calc(100% + 5vi * 2);
-  margin-block: 7%;
+  margin-block: 7% auto;
 }
 
 .content__picture {
-  width: inherit;
+  inline-size: 100%;
 }
 
 .figcaption {
