@@ -152,7 +152,7 @@ figure {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid #312A4E;
+  border-bottom: 1px solid currentColor;
   padding: 20px 0px;
   font-weight: 400;
   font-size: 18px;
@@ -161,3 +161,140 @@ figure {
 }
 
 /* Шаг 8. Карточка */
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 7%;
+  border: 1px solid currentColor;
+  padding: 10px;
+  color: currentColor;
+  aspect-ratio: 4/3;
+}
+
+.content__card-title {
+  font-size: 60px;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+}
+
+.colored-text {
+  position: relative;
+  display: inline-block;
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: var(--accent-color);
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+/* Шаг 9. Логотип и переключатель тем */
+
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  padding-block: 20px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-button {
+  border: none;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  position: relative;
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: var(--accent-color);
+  inline-size: 100%;
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: 0px;
+}
+
+/* Шаг 10. Состояния */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+/* Шаг 11. Подвал сайта */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 10%; /* отступ сверхку 10% от ширины */
+  border-top: 1px solid currentColor;
+  padding-block: 36px;
+}
+
+.footer__copyright {
+  color: currentColor;
+  font-size: 18px;
+}
+
+/* Шаг 12. Тёмная тема */
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-letter {
+  border: 1px solid #B3B3B3;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url('../images/pattern.svg');
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url('../images/pattern.svg');
+}
+
+.theme_dark .content__list-item::before {
+  background-image: url('../images/marker-dark.svg');
+}
